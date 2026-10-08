@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -391,6 +389,29 @@ public class practice {
         }
 
         return ans;
+    }
+
+    // 1021. Remove Outermost Parentheses ( Leetcode ) ( repeat )
+    public String removeOuterParentheses(String s) {
+        StringBuilder ans = new StringBuilder();
+        int count = 0;
+
+        for(char ch : s.toCharArray()){
+            if(ch =='('){
+                if(count > 0){
+                    ans.append(ch);
+                }
+                count++;
+            }
+            else{
+                count--;
+                if(count > 0){
+                    ans.append(ch);
+                }
+            }
+        }
+
+        return ans.toString(); 
     }
 
     public static void main(String[] args) {
