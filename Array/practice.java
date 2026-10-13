@@ -106,7 +106,7 @@ public class practice {
         return max;
     }
 
-    // 56 Merge Intervals (Leet code)
+    // 56 Merge Intervals (Leetcode)
     public int[][] merge(int[][] intervals) {
         if (intervals.length == 1) {
             return intervals;
@@ -134,7 +134,7 @@ public class practice {
         return arr;
     }
 
-    // 152 Max Product (Leet code)
+    // 152 Max Product (Leetcode)
     public int maxProduct(int[] nums) {
         int maxProduct = 1;
         int minus = 0;
@@ -187,7 +187,7 @@ public class practice {
         return ans;
     }
 
-    // 75 Sort colors (Leet code)
+    // 75 Sort colors (Leetcode)
     public void sortColors(int[] nums) {
         int i = 1;
         int j = 1;
@@ -204,7 +204,7 @@ public class practice {
         }
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
     }
 }
