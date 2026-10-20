@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class practice {
 
@@ -204,6 +207,23 @@ public class practice {
         }
     }
 
+    // 2913. Subarrays Distinct Element Sum of Squares I
+    public int sumCounts(List<Integer> nums) {
+        int sum = 0;
+
+        for (int i = 0; i < nums.size(); i++) {
+            Set<Integer> s = new HashSet<>();
+
+            for (int j = i; j < nums.size(); j++) {
+                s.add(nums.get(j));
+
+                int square = s.size() * s.size();
+                sum += square;
+            }
+        }
+
+        return sum;
+    }
 
     public static void main(String[] args) {
     }

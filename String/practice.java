@@ -238,7 +238,6 @@ public class practice {
         s = s.toLowerCase();
         int i = 0;
         int j = s.length() - 1;
-        boolean ans = false;
         while (i < j) {
             int ASICCI = s.charAt(i);
             int ASICCJ = s.charAt(j);

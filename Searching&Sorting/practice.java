@@ -1,5 +1,5 @@
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 
 public class practice {
 
@@ -254,7 +254,7 @@ public class practice {
     // 881. Boats to Save People ( Leetcode ) ( Lag )
     public int numRescueBoats(int[] people, int limit) {
         Arrays.sort(people);
-  
+
         int left = 0;
         int right = people.length - 1;
         int boats = 0;
@@ -269,6 +269,73 @@ public class practice {
         }
 
         return boats;
+    }
+
+    // 2089. Find Target Indices After Sorting Array ( Leetcode )
+    public ArrayList<Integer> targetIndices(int[] nums, int target) {
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        int start = 0;
+        int end = nums.length - 1;
+
+        int si = 0;
+        int ei = 0;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                si = findLeft(nums, target, mid);
+                ei = findRight(nums, target, mid);
+                break;
+            }
+
+            if (nums[mid] > target) {
+                end = mid - 1;
+            }
+            if (nums[mid] < target) {
+                start = mid + 1;
+            }
+        }
+
+        for (int i = si; i < ei; i++) {
+            ans.add(i);
+        }
+
+        return ans;
+    }
+
+    public int findLeft(int[] nums, int target, int e) {
+        int start = 0;
+        int end = e;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] < target) {
+                start = mid + 1;
+            }
+            if (nums[mid] >= target) {
+                end = mid - 1;
+            }
+        }
+
+        return start;
+    }
+
+    public int findRight(int[] nums, int target, int s) {
+        int start = s;
+        int end = nums.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] <= target) {
+                start = mid + 1;
+            }
+            if (nums[mid] > target) {
+                end = mid - 1;
+            }
+        }
+
+        return start;
     }
 
     public static void main(String[] args) {
