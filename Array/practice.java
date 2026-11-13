@@ -225,6 +225,7 @@ public class practice {
         return sum;
     }
 
+   
     public static void main(String[] args) {
     }
 }
