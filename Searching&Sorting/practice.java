@@ -338,6 +338,15 @@ public class practice {
         return start;
     }
 
+    // 2567. Minimum Score by Changing Two Elements ( Leetcode )
+    public int minimizeSum(int[] nums) {
+        Arrays.sort(nums);
+        int first = nums[nums.length - 1] - nums[2];
+        int second = nums[nums.length - 3] - nums[0];
+        int third = nums[nums.length - 2] - nums[1];
+        return Math.min(first, Math.min(second, third));
+    }
+
     public static void main(String[] args) {
 
     }

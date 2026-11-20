@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 public class practice {
-
     // 1. Two sum ( Leetcode )
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -207,7 +206,7 @@ public class practice {
         }
     }
 
-    // 2913. Subarrays Distinct Element Sum of Squares I
+    // 2913. Subarrays Distinct Element Sum of Squares I (Leet code)
     public int sumCounts(List<Integer> nums) {
         int sum = 0;
 
@@ -225,7 +224,38 @@ public class practice {
         return sum;
     }
 
-   
+    // 290. Word Pattern (Leet code)
+    public boolean wordPattern(String pattern, String s) {
+
+        String[] arr1 = pattern.split("");
+        String[] arr2 = s.split(" ");
+
+        HashSet<String> set1 = new HashSet<>(Arrays.asList(arr1));
+        HashSet<String> set2 = new HashSet<>(Arrays.asList(arr2));
+
+        if (set1.size() != set2.size()) {
+            return false;
+        }
+
+        HashMap<String, String> map = new HashMap<>();
+
+        System.out.println(map);
+
+        for (String key : set1) {
+            for (String value : set2) {
+                map.put(key, value);
+            }
+        }
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (!map.get(arr1[i]).equals(arr2[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
     }
 }
